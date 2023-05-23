@@ -2,29 +2,42 @@
 # Определите минимальное число монеток, которые нужно перевернуть, чтобы все монетки были повернуты вверх одной и той же стороной.
 # Выведите минимальное количество монет, которые нужно перевернуть
 
-def min_coin_flips(coins):
-    count_heads = 0
-    count_tails = 0
+# def min_coin_flips(coins):
+#     count_heads = 0
+#     count_tails = 0
+#
+#     # Подсчет количества монеток с решкой и гербом вверх
+#     for coin in coins:
+#         if coin == 'H':
+#             count_heads += 1
+#         elif coin == 'T':
+#             count_tails += 1
+#
+#     # Находим минимальное количество монеток, которые нужно перевернуть
+#     min_flips = min(count_heads, count_tails)
+#
+#     return min_flips
+#
+# # Ввод количества монеток
+# n = int(input("Введите количество монеток: "))
+#
+# # Ввод статуса монеток (H - решка, T - герб)
+# coins = []
+# for i in range(n):
+#     coin = input("Введите статус монетки (H или T) для монетки номер {}: ".format(i+1))
+#     coins.append(coin)
+#
+# print(min_coin_flips(coins))
 
-    # Подсчет количества монеток с решкой и гербом вверх
-    for coin in coins:
-        if coin == 'H':
-            count_heads += 1
-        elif coin == 'T':
-            count_tails += 1
+# Задача 12: Петя  два натуральных числа X и Y (X,Y≤1000), а Катя должна их отгадать.
+# Для этого Петя делает две подсказки. Он называет сумму этих чисел S и их произведение P.
+# Помогите Кате отгадать задуманные Петей числа.
 
-    # Находим минимальное количество монеток, которые нужно перевернуть
-    min_flips = min(count_heads, count_tails)
-
-    return min_flips
-
-# Ввод количества монеток
-n = int(input("Введите количество монеток: "))
-
-# Ввод статуса монеток (H - решка, T - герб)
-coins = []
-for i in range(n):
-    coin = input("Введите статус монетки (H или T) для монетки номер {}: ".format(i+1))
-    coins.append(coin)
-
-print(min_coin_flips(coins))
+x = int(input('Введите сумму чисел X:'))
+y = int(input('Введите произведение чисел Y:'))
+for i in range(x):
+    for j in range(y):
+        if x == i + j and y == i * j:
+            print(i, j)
+else:
+    print('Чисел не найдено')
