@@ -31,18 +31,30 @@
 # Пользователь вводит 2 числа. n — кол-во элементов первого множества. m — кол-во элементов второго множества.
 # Затем пользователь вводит сами элементы множеств.
 
-n = int(input('Enter quantity of elements in set 1: '))
-set1 = set()
-for i in range(n):
-    num1 = int(input('Enter value to set 1: '))
-    set1.add(num1)
+# n = int(input('Enter quantity of elements in set 1: '))
+# set1 = set()
+# for i in range(n):
+#     num1 = int(input('Enter value to set 1: '))
+#     set1.add(num1)
+#
+# m = int(input('Enter quantity of elements in set 2: '))
+# set2 = set()
+# for i in range(m):
+#     num2 = int(input('Enter value to set 2: '))
+#     set2.add(num2)
+#
+# intersection = set1.intersection(set2)
+# result = sorted(intersection)
+# print("Числа, встречающиеся в обоих множествах без повторений:", result)
 
-m = int(input('Enter quantity of elements in set 2: '))
-set2 = set()
-for i in range(m):
-    num2 = int(input('Enter value to set 2: '))
-    set2.add(num2)
+# Пользователь вводит текст(строка). Словом считается последовательность непробельных символов идущих подряд, слова разделены одним или большим числом пробелов или символами конца строки.
+# Определите, сколько различных слов содержится в этом тексте.
 
-intersection = set1.intersection(set2)
-result = sorted(intersection)
-print("Числа, встречающиеся в обоих множествах без повторений:", result)
+some_str = input()
+some_list = some_str.split()
+some_set = set ()
+for word in some_list:
+    if not word[-1].isalpha():
+        word = word[:-1]
+    some_set.add(word)
+print(len(some_set))
