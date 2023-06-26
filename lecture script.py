@@ -65,3 +65,34 @@ some_set.add(1) # добавление элемента в множество
 
 list = [random.randint(min, max) for i in range(n)] # создание списка из рандомных числе, нужно импортировать библиотеку random
 
+# Разница return vs print
+def sq1(x):
+    print(x**2) # эта только принтует, не сохраняет значение в переменную
+def sq2(x):
+    return x**2
+res = sq2(20) # эта сохраняет значение функ-и в переменную, и уже печатаем переменную
+print(res)
+
+# map - функция, к-ая применяет какую-то другую функцию к объектам коллекции
+some_list = [1, 2, 3, 4, 5]
+new_list = list(map(str, some_list))
+print(new_list)
+
+# lambda - функция, к-ая не сохранеят значение исполняемой операции. Как правило делает разовую операцию внутри другой функции.
+def c(x):
+    return x ** 3
+
+some_list = [1, 2, 3, 4, 5]
+new_list = list(map(lambda x: x ** 3, some_list)) # здесь лямда и с выполняют одно и то же
+print(new_list)
+
+some_list = [1, 2, 3, 4, 5]
+new_list = list(map(lambda x: x ** 2 if x % 2 == 0 else x ** 3, some_list)) # сложное условие в лямбе
+print(new_list)
+
+# фильтр - извлекает данные из коллекции по правилу
+def even(a):
+    return a % 2 == 0
+some_list = [1, 2, 3, 4, 5]
+new_list = list(filter(lambda a: a % 2 == 0, some_list))
+print(new_list)
